@@ -1,0 +1,152 @@
+.certificates-container {
+  padding: 50px 30px 80px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffe8ec, #e0f7ff);
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+.certificates-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.certificates-header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ff5f6d;
+}
+
+.certificates-header p {
+  font-size: 1.05rem;
+  color: #444;
+  margin: 12px auto;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* Certificate Cards */
+.certificates-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.certificates-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  animation: slideIn 0.7s ease forwards;
+}
+
+.certificates-card:hover {
+  transform: scale(1.02);
+}
+
+.certificates-card h2 {
+  color: #ff416c;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.certificates-date {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Preview Box */
+.certificates-preview {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Actions */
+.certificates-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.certificates-btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn {
+  background: #ff5f6d;
+  color: white;
+}
+
+.view-btn {
+  background: #90e0ef;
+  color: #003049;
+}
+
+.download-btn:hover {
+  background: #e63946;
+}
+
+.view-btn:hover {
+  background: #48cae4;
+}
+
+/* Footer Note */
+.certificates-footer-note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

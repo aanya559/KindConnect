@@ -1,0 +1,154 @@
+.volunteer-page {
+  padding: 50px 30px;
+  background: linear-gradient(to right, #ffe8ec, #e0f7ff);
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+}
+
+.volunteer-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.volunteer-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff5f6d;
+}
+
+.volunteer-header p {
+  max-width: 700px;
+  margin: 10px auto;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Cards */
+.volunteer-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.volunteer-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-5px);
+}
+
+.volunteer-card h3 {
+  color: #ff416c;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+/* Form Section */
+.volunteer-form-section {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 40px 30px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.volunteer-form-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff5f6d;
+  margin-bottom: 15px;
+}
+
+.volunteer-form-section p {
+  text-align: center;
+  max-width: 600px;
+  margin: 10px auto;
+  font-size: 1rem;
+  color: #444;
+}
+
+.volunteer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.volunteer-form input,
+.volunteer-form select,
+.volunteer-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  transition: border 0.2s ease;
+}
+
+.volunteer-form input:focus,
+.volunteer-form select:focus,
+.volunteer-form textarea:focus {
+  border-color: #ff5f6d;
+  outline: none;
+}
+
+.volunteer-form button {
+  padding: 12px;
+  background-color: #ff5f6d;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.volunteer-form button:hover {
+  background-color: #e63946;
+}
+
+/* Success Message */
+.success-msg {
+  text-align: center;
+  color: #007f5f;
+  font-weight: bold;
+  background: #d4f8e8;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 20px auto 0;
+  width: fit-content;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
