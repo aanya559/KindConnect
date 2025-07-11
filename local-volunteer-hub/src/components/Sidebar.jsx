@@ -15,16 +15,16 @@ export default function Sidebar() {
 
 
     const menuItems = [
-  { name: 'Home', path: '/', icon: <FaHome /> },
+  { name: 'Home', path: '/home', icon: <FaHome /> },
   { name: 'Dashboard', path: '/dashboard', icon: <FaChartBar /> },
   { name: 'Events', path: '/events', icon: <FaCalendarAlt /> },
   { name: 'Create Event', path: '/create', icon: <FaPlusCircle /> },
   { name: 'Volunteers', path: '/volunteers', icon: <FaUsers /> },
   { name: 'Certificates', path: '/certificates', icon: <FaCertificate /> },
-  { name: 'Login', path: '/login', icon: <FaSignInAlt /> },
-  { name: 'Register', path: '/register', icon: <FaUserPlus /> },
+  // // { name: 'Login', path: '/login', icon: <FaSignInAlt /> },
+  // { name: 'Register', path: '/register', icon: <FaUserPlus /> },
    // moved here ✅
-  { name: 'Logout', path: '/logout', icon: <FaSignOutAlt /> },
+  // { name: 'Logout', path: '/logout', icon: <FaSignOutAlt /> },
   { name: 'Help', path: '/help', icon: <FaQuestionCircle /> },
 ];
 

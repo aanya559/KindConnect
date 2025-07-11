@@ -3,35 +3,35 @@ import './Events.css';
 
 const sampleEvents = [
   {
-    title: '🌳 Tree Plantation Drive',
+    title: ' Tree Plantation Drive',
     date: ' July 10, 2025',
     location: ' Eco Park, Delhi',
     desc: 'Join us in making the city greener by planting trees. Tools and refreshments provided.',
     category: 'Environment',
   },
   {
-    title: '🥪 Food Distribution Camp',
+    title: ' Food Distribution Camp',
     date: ' July 14, 2025',
     location: ' Community Hall, Mumbai',
     desc: 'Help distribute meals to underprivileged communities. Volunteers needed in shifts.',
     category: 'Health',
   },
   {
-    title: '📚 Teaching Session',
+    title: ' Teaching Session',
     date: ' July 20, 2025',
     location: ' Learning Center, Bangalore',
     desc: 'Spend a weekend teaching basic math and reading to children in need.',
     category: 'Education',
   },
   {
-    title: '🧼 Hygiene Awareness Workshop',
+    title: ' Hygiene Awareness Workshop',
     date: ' July 25, 2025',
     location: ' Govt School, Chennai',
     desc: 'Conduct workshops for young girls and educate about hygiene practices.',
     category: 'Health',
   },
   {
-    title: '💧 Water Conservation Drive',
+    title: ' Water Conservation Drive',
     date: ' July 28, 2025',
     location: '  Community Center, Pune',
     desc: 'Raise awareness about water conservation in local communities.',
