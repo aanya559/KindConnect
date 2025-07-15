@@ -1,14 +1,14 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar"; // Make sure Navbar.jsx exists in components
 
 const MainLayout = ({ children }) => {
   return (
-    <div style={{ display: "flex" }}>
-      <Sidebar />
-      <div style={{ flex: 1, padding: "20px" }}>
+    <>
+      <Navbar />
+      <div style={{ paddingTop: "70px", padding: "20px" }}>
         {children}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,112 @@
+
+.fancy-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background-color: #e0f7fa; /* Soft Teal */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: #00acc1; /* Cyan Accent */
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #004d40;
+  letter-spacing: 0.5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  position: relative;
+  color: #004d40;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #00acc1;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #00acc1;
+}
+
+.nav-link.active {
+  color: #00acc1;
+  font-weight: bold;
+}
+
+.avatar-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar-icon {
+  font-size: 28px;
+  color: #004d40;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #ffffff;
+  color: #004d40;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.dropdown-menu a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #004d40;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+  color: #00acc1;
+}

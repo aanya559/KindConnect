@@ -3,23 +3,42 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaLock, FaGoogle, FaFacebookF } from 'react-icons/fa';
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
+import API from '../api/api';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Login successful! (No backend yet)");
-    navigate('/dashboard'); // redirect after login
+    try {
+      const res = await API.post('/auth/login', formData);
+      alert("Login successful!");
+      console.log("Login Response:", res.data);
+
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      navigate('/dashboard');
+    } catch (err) {
+      alert(err.response?.data?.message || "Login failed");
+    }
   };
 
   const handleGoogleLogin = () => {
-    alert("Google login clicked (no backend connected)");
+    alert("Google login clicked (not implemented)");
   };
 
   const handleFacebookLogin = () => {
-    alert("Facebook login clicked (no backend connected)");
+    alert("Facebook login clicked (not implemented)");
   };
 
   return (
@@ -29,14 +48,24 @@ const Login = () => {
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <FaEnvelope />
-            <input type="email" placeholder="Email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className="input-group">
             <FaLock />
             <input
               type={showPassword ? 'text' : 'password'}
+              name="password"
               placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
               required
             />
             <span onClick={() => setShowPassword(!showPassword)}>
@@ -53,10 +82,10 @@ const Login = () => {
           <div className="social-separator">or login with</div>
 
           <div className="social-buttons">
-            <button className="google-btn" onClick={handleGoogleLogin}>
+            <button type="button" className="google-btn" onClick={handleGoogleLogin}>
               <FaGoogle /> Google
             </button>
-            <button className="facebook-btn" onClick={handleFacebookLogin}>
+            <button type="button" className="facebook-btn" onClick={handleFacebookLogin}>
               <FaFacebookF /> Facebook
             </button>
           </div>
