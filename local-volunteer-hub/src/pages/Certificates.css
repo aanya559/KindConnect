@@ -12,7 +12,7 @@
 
 .certificates-header h1 {
   font-size: 32px;
-  color: #006064;
+  color: rgb(59, 59, 59);
   margin-bottom: 15px;
 }
 
@@ -47,7 +47,7 @@
 
 .certificates-card h2 {
   font-size: 20px;
-  color: #004d40;
+  color: rgb(59, 59, 59);
   margin-bottom: 8px;
 }
 

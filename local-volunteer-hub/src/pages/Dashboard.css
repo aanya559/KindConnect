@@ -14,7 +14,7 @@
 
 .dashboard-header h1 {
   font-size: 32px;
-  color: #006064;
+  color: rgb(59, 59, 59);
   margin-bottom: 10px;
 }
 
@@ -66,7 +66,7 @@
 
 .quick-actions h2 {
   font-size: 24px;
-  color: #006064;
+  color: rgb(59, 59, 59);
   margin-bottom: 20px;
 }
 
@@ -105,7 +105,7 @@
 .upcoming-events h2,
 .volunteer-tips h2,
 .dashboard-faq h2 {
-  color: #006064;
+  color: rgb(59, 59, 59);
   font-size: 22px;
   margin-bottom: 15px;
 }
