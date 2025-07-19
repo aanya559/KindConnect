@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 const volunteerSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   phone: String,
-  interest: { type: String, required: true },
-  reason: { type: String, required: true },
-  submittedAt: { type: Date, default: Date.now },
+  interest: String,
+  message: String,
+  createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model("Volunteer", volunteerSchema);
+export default mongoose.model('Volunteer', volunteerSchema);

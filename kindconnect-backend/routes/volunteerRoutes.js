@@ -1,18 +1,32 @@
-const express = require("express");
+// routes/volunteerRoutes.js
+import express from 'express';
+import Volunteer from '../models/Volunteer.js';
+import { sendConfirmationEmail } from '../utils/mailer.js';
+
 const router = express.Router();
-const Volunteer = require("../models/Volunteer");
 
-router.post("/", async (req, res) => {
-  const { name, email, phone, interest, reason } = req.body;
-
+router.post('/', async (req, res) => {
   try {
-    const newVolunteer = new Volunteer({ name, email, phone, interest, reason });
+    const { name, email, phone, interest, message } = req.body;
+
+    const newVolunteer = new Volunteer({
+      name,
+      email,
+      phone,
+      interest,
+      message,
+    });
+
     await newVolunteer.save();
-    res.status(200).json({ msg: "Volunteer application received!" });
+
+    // Send confirmation email
+    await sendConfirmationEmail(email, name, interest);
+
+    res.status(201).json({ message: 'Volunteer registered and email sent successfully' });
   } catch (err) {
-    console.error("Error saving volunteer:", err.message);
-    res.status(500).json({ msg: "Failed to save application." });
+    console.error('Error saving volunteer or sending email:', err);
+    res.status(500).json({ message: 'Server Error' });
   }
 });
 
-module.exports = router;
+export default router;
