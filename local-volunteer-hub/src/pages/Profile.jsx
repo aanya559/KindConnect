@@ -42,7 +42,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      <h2>Welcome, {user.name} 🌼</h2>
+      <h2>Welcome, {user.name} </h2>
         
 
         {/* <div className="profile-actions">

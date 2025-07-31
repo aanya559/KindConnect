@@ -31,7 +31,7 @@ const Volunteers = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5050/api/volunteer/add', formData, {

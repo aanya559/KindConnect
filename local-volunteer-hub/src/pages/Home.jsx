@@ -132,9 +132,7 @@ Join us in rewriting what it means to care — one connection at a time.
         </p>
       </section>
 
-      {/* <footer className="footer">
-        <p>© 2025 KindConnect — Powered by People. Driven by Purpose.</p>
-      </footer> */}
+      
     </div>
   );
 };
