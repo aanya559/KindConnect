@@ -38,7 +38,7 @@ const Certificates = () => {
 
       <div className="certificates-footer-note">
         <p>
-          🌟 More volunteering, more impact, more recognition. Participate in upcoming events and keep adding 
+           More volunteering, more impact, more recognition. Participate in upcoming events and keep adding 
           new milestones to your journey!
         </p>
       </div>

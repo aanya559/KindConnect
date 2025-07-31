@@ -1,6 +1,6 @@
 .profile-container {
   padding: 100px 30px 40px;
-  position: fixed;
+  position: flex;
   font-family: 'Segoe UI', sans-serif;
   background: #f9feff;
   min-height: 100vh;

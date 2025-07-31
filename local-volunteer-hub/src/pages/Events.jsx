@@ -63,10 +63,10 @@ const Events = () => {
         <p>Find opportunities to make a difference in your community</p>
       </div>
 
-      <div className="filter-bar">
+      {/* <div className="filter-bar">
         <input type="text" placeholder="Search by location, type, or name..." />
         <button className="filter-btn">Filter</button>
-      </div>
+      </div> */}
 
       <div className="events-grid">
         {events.slice(0, visibleCount).map((event, index) => (

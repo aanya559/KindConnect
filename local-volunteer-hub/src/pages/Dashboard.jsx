@@ -119,9 +119,9 @@ const Dashboard = () => {
         </ul>
       </div>
 
-      <div className="dashboard-footer">
+      {/* <div className="dashboard-footer">
         💖 Keep making a difference. Every action counts!
-      </div>
+      </div> */}
     </div>
   );
 };

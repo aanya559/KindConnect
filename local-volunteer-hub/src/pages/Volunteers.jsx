@@ -31,7 +31,7 @@ const Volunteers = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5050/api/volunteer/add', formData, {
@@ -74,6 +74,11 @@ const Volunteers = () => {
         <h2>Become a Volunteer</h2>
         <p>Ready to be part of something meaningful? Join our growing network of volunteers and help build a better tomorrow.</p>
 
+        {submitted && (
+          <div className="success-msg">
+            🎉 Thank you! We'll get in touch soon. 💌
+          </div>
+        )}
         {submitted && (
           <div className="success-msg">
             🎉 Thank you! We'll get in touch soon. 💌
@@ -131,4 +136,4 @@ const Volunteers = () => {
   );
 };
 
-export default Volunteers;
+export default Volunteers; 

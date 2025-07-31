@@ -4,7 +4,7 @@
   padding: 40px 20px;
   padding-top: 80px;
   min-height: 100vh;
- background: linear-gradient(135deg, #f3f4f6, #e0f7fa);
+ /* background: linear-gradient(135deg, #f3f4f6, #e0f7fa); */
   font-family: 'Inter', sans-serif;
   color: #1e293b;
 }

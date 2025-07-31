@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -133,9 +132,9 @@ Join us in rewriting what it means to care — one connection at a time.
         </p>
       </section>
 
-      <footer className="footer">
+      {/* <footer className="footer">
         <p>© 2025 KindConnect — Powered by People. Driven by Purpose.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };
