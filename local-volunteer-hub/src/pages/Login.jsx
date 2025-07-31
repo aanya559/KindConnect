@@ -4,6 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaLock, FaGoogle, FaFacebookF } from 'react-icons/fa';
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 import API from '../api/api';
+// import { useLocation } from 'react-router-dom';
+
+// const location = useLocation();
+// const redirectPath = new URLSearchParams(location.search).get('redirect') || '/dashboard';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,13 +25,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await API.post('/auth/login', formData);
-      alert("Login successful!");
-      console.log("Login Response:", res.data);
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      navigate('/dashboard');
+      // navigate(redirectPath);
+      navigate('/');
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
     }

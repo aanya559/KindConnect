@@ -38,7 +38,7 @@ const CreateEvent = () => {
       setErrors(errs);
     } else {
       try {
-        const res = await axios.post('http://localhost:5000/api/events', form);
+        const res = await axios.post('http://localhost:5050/api/events/create', form);
         alert('🎉 Event Created Successfully!');
         console.log(res.data);
         setForm({

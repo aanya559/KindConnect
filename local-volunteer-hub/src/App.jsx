@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import MainLayout from "./layouts/MainLayout";
 import Profile from './pages/Profile';
+import Logout from './pages/Logout'; // Importing the Logout page
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/help" element={<MainLayout><Help /></MainLayout>} />
         <Route path="/register" element={<MainLayout><Register /></MainLayout>} />
         <Route path="/login" element={<MainLayout><Login /></MainLayout>} />
+        <Route path = "/logout" element={<MainLayout><Logout /></MainLayout>} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,4 @@
-
- import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { FaSeedling, FaUserCircle } from 'react-icons/fa';
@@ -8,6 +7,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef();
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
 
   // Auto-close dropdown when clicking outside
   useEffect(() => {
@@ -20,25 +20,37 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // 🔄 Watch for changes to localStorage (cross-tab or same tab)
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setIsLoggedIn(!!localStorage.getItem('token'));
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    // also useful on the same tab
+    const interval = setInterval(handleStorageChange, 1000); 
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
+
   const menuItems = [
     { name: 'Home', path: '/' },
-    // { name: 'Dashboard', path: '/dashboard' },
     { name: 'Events', path: '/events' },
     { name: 'Create Event', path: '/create' },
     { name: 'Volunteers', path: '/volunteers' },
-    // { name: 'Certificates', path: '/certificates' },
     { name: 'Help', path: '/help' },
   ];
 
   return (
     <nav className="fancy-navbar">
-      {/* Left: Logo + Title */}
       <div className="navbar-left">
         <FaSeedling className="logo-icon" />
         <span className="navbar-title">KindConnect</span>
       </div>
 
-      {/* Right: Links + Profile */}
       <div className="navbar-right">
         {menuItems.map((item, index) => (
           <Link
@@ -50,7 +62,6 @@ export default function Navbar() {
           </Link>
         ))}
 
-        {/* Avatar & Dropdown */}
         <div className="avatar-container" ref={dropdownRef}>
           <FaUserCircle
             className="avatar-icon"
@@ -58,9 +69,14 @@ export default function Navbar() {
           />
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <Link to="/profile">Profile</Link>
-            
-              <Link to="/login">Logout</Link>
+              {isLoggedIn ? (
+                <>
+                  <Link to="/profile">Profile</Link>
+                  <Link to="/logout">Logout</Link>
+                </>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
             </div>
           )}
         </div>

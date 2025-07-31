@@ -110,15 +110,6 @@ const Dashboard = () => {
         </ul>
       </div>
 
-      <div className="volunteer-tips">
-        <h2>Volunteer Tips</h2>
-        <ul>
-          <li>✅ Stay hydrated and wear comfy shoes for outdoor events</li>
-          <li>🧠 Be open to learning — every experience counts</li>
-          <li>🫶 Respect community members and work as a team</li>
-        </ul>
-      </div>
-
       <div className="dashboard-faq">
         <h2>FAQs</h2>
         <ul>

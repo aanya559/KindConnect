@@ -55,10 +55,13 @@ const Help = () => {
     e.preventDefault();
     setFeedback('');
     try {
-      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post('http://localhost:5050/api/contact', formData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
       setFeedback('✅ Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
+      console.error(err);
       setFeedback('❌ Failed to send. Please try again later.');
     }
   };
