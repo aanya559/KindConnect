@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const Event = require('../models/Event');
-const authenticate = require('../middleware/auth'); // new middleware
+const authenticateOrganiser = require('../middleware/authOrganiser'); // new middleware
+const authenticate = require('../middleware/auth'); // Assuming you have a general auth middleware
 
 // @route POST /api/events
 // @desc Create a new event
-router.post('/create', async (req, res) => {
+router.post('/create', authenticateOrganiser, async (req, res) => {
   try {
     const newEvent = new Event(req.body);
     await newEvent.save();

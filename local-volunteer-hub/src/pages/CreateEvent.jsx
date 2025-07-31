@@ -51,7 +51,11 @@ const CreateEvent = () => {
         });
       } catch (error) {
         console.error('Error creating event:', error);
-        alert('Something went wrong while creating the event.');
+        if (error.response && error.response.status === 401) {
+           alert("Unauthorized! Please log in as Organiser to create an event.");
+        } else {
+          alert(error.response ? error.response.data.message : 'An unexpected error occurred. Please try again later.');
+        }
       }
     }
   };
