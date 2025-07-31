@@ -1,21 +1,12 @@
-// routes/volunteerRoutes.js
-import express from 'express';
-import Volunteer from '../models/Volunteer.js';
-import { sendConfirmationEmail } from '../utils/mailer.js';
-
+const express = require("express");
 const router = express.Router();
+const Volunteer = require("../models/Volunteer");
 
 router.post("/add", async (req, res) => {
   const { name, email, phone, interest, reason } = req.body;
 
-    const newVolunteer = new Volunteer({
-      name,
-      email,
-      phone,
-      interest,
-      message,
-    });
-
+  try {
+    const newVolunteer = new Volunteer({ name, email, phone, interest, reason });
     await newVolunteer.save();
     res.status(200).json({ msg: "Volunteer application received!" });
   } catch (err) {
@@ -37,4 +28,4 @@ router.get("/recent", async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

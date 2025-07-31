@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Volunteers.css';
-import axios from 'axios'; // Make sure axios is installed
 
 const Volunteers = () => {
   const [volunteers, setVolunteers] = useState([]);
@@ -32,7 +31,6 @@ const Volunteers = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -76,11 +74,11 @@ const Volunteers = () => {
         <h2>Become a Volunteer</h2>
         <p>Ready to be part of something meaningful? Join our growing network of volunteers and help build a better tomorrow.</p>
 
-      {submitted && (
-        <div className="success-msg">
-          🎉 Thank you! We'll get in touch soon. 💌
-        </div>
-      )}
+        {submitted && (
+          <div className="success-msg">
+            🎉 Thank you! We'll get in touch soon. 💌
+          </div>
+        )}
 
         <form className="volunteer-form" onSubmit={handleSubmit}>
           <input
@@ -132,7 +130,5 @@ const Volunteers = () => {
     </div>
   );
 };
-
-export default Volunteers;
 
 export default Volunteers;
