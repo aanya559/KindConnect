@@ -6,7 +6,7 @@ const authenticate = require('../middleware/auth'); // Assuming you have a gener
 
 // @route POST /api/events
 // @desc Create a new event
-router.post('/create', authenticateOrganiser, async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const newEvent = new Event(req.body);
     await newEvent.save();

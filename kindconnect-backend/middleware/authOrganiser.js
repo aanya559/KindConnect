@@ -10,7 +10,7 @@ const authenticateOrganiser = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded; // decoded contains { id: user._id }
-    if (req.user.role !== 'organiser') {
+    if (req.user.role !== 'organizer') {
       return res.status(403).json({ message: 'Access denied. Organiser role required.' });
     }
     next();
